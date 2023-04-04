@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 This project is for faculty project.
-After you clone it run.\
+After you clone it run.
 
 ### `npm ci`
 ### `start-ikt-project`
