@@ -7,7 +7,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This project is for faculty project.
 After you clone it run.
 
-### `npm ci`
+### `npm ci` 
+ npm ci is a command that installs the dependencies listed in the package-lock.json
+
 ### `start-ikt-project`
 
 Runs the app in the development mode.\
