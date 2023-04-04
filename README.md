@@ -17,6 +17,4 @@ You may also see any lint errors in the console.
 
 This project is using React 18.2.0 version.\
 This project is using Javascript.\
-This project is using SCSS.\
-
-
+This project is using SCSS.
