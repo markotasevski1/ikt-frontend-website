@@ -1,0 +1,74 @@
+.signin{
+    height: 90vh;
+    padding-top: 4%;
+}
+.signinCard{
+    width: 56%;
+    margin: 0 auto;
+    border-radius: 142px;
+    background-color: #ffb61c;
+    color: #6B0E0E;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0px 5px 6px #0000002a;
+}
+.signinLogo{
+    margin: 0%;
+    text-align: center;
+    img{
+        height: 210px;
+    }
+} 
+.label p{
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-left: 24%;
+}
+.signinForm{
+    width: 55%;
+    text-align: center;
+    margin: 0 auto;
+    .form-group{
+        margin: 18px;
+        input{
+            border-radius: 34px;
+            border: 0px;
+            width: 95%;
+            height: 67px;
+            font-size: 24px;  
+            padding-left: 5%;
+            color: #6B0E0E; 
+            box-shadow: 0px 5px 6px #0000002a;
+        }
+        ::placeholder{
+            color: #6B0E0E;
+        }
+        a{
+            color:#6B0E0E;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+        }
+        .forgotPassword{
+            margin-left: 75%;
+        }
+        button{
+            color: #6B0E0E;
+            font-size: 26px;
+            border-radius: 34px;
+            border: 0;
+            width: 189px;
+            height: 67px;
+            box-shadow: 0px 5px 6px #0000002a;
+        }
+        p{
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .shortcutLogin img{
+            margin-left: 12px;
+            margin-right: 12px;
+            margin-bottom: 24px;
+        }
+    }
+}
