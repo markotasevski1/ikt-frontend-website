@@ -6,9 +6,9 @@ export function App()
 {
 return(
   <div>
-    {/* <NavigationMenu></NavigationMenu>
-    <h1>икт проект</h1> */}
-    <Login></Login>
+    <NavigationMenu></NavigationMenu>
+    <h1>икт проект</h1>
+    {/* <Login></Login> */}
     {/* <Signin></Signin> */}
     {/* <Register></Register> */}
   </div>

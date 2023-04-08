@@ -1,7 +1,7 @@
 import { NavItem } from "./NavItem";
 import "../../style/NavigationMenuStyle.scss";
 export function NavItems() {
-  const navItems = ["Почетна", "Левели", "За нас", "Профил"]; // an array of nav item names
+  const navItems = ["Home Page", "About us", "Levels", "Materials", "Profile", "Log Out"]; // an array of nav item names
 
   return (
     <div className="navItems">
