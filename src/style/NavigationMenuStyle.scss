@@ -1,11 +1,12 @@
 .navigationMenu {
     display: flex;
     background-color: #ffb61c;
+    height: 120px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     .logoNavMenu{
         margin-left: 5%;
         img{
-            width: 225px;
+            width: 230px;
         }
     }
 }
@@ -15,8 +16,7 @@
     margin-right: 4%;
     padding-top: 21px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
-    font-weight: 500;
+
     color: white;
     :hover{
         position: relative;
@@ -31,4 +31,5 @@
 .NavItem{
     margin:28px;
     text-align: center;
+    font-size: 24px;
 }
