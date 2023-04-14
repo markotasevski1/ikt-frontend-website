@@ -1,13 +1,29 @@
-import { NavItem } from "./NavItem";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import "../../style/NavigationMenuStyle.scss";
 export function NavItems() {
-  const navItems = ["Home Page", "About us", "Levels", "Materials", "Profile", "Log Out"]; // an array of nav item names
-
   return (
     <div className="navItems">
-      {navItems.map((text) => (
-        <NavItem className="NavItem" text={text} />
-      ))}
+      <ul>
+        <CustomLink to="/home">Home Page</CustomLink>
+        <CustomLink to="/aboutus">About Us</CustomLink>
+        <CustomLink to="/levels">Levels</CustomLink>
+        <CustomLink to="/materials">Materials</CustomLink>
+        <CustomLink to="/profile">Profile</CustomLink>
+        <CustomLink to="/">Log Out</CustomLink> 
+      </ul>
     </div>
   );
+}
+
+function CustomLink({to, children, ...props}){
+  const resolvedPath = useResolvedPath(to);
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true})
+
+  return(
+    <li className={isActive ? "active" : ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  )
 }
