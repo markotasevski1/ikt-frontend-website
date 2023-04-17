@@ -5,11 +5,10 @@ import Signin from './components/login/signin'
 import Register from './components/login/register'
 import AboutUs from './components/aboutUs/aboutus';
 import HomePage from './components/homePage/homePage';
-import Levels from './components/levels/levels';
+import {Levels} from './components/levels/Levels';
 import { Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import "../src/style/AppStyle.scss"
-
 
 export function App()
 {

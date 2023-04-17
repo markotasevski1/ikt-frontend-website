@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import "../../style/Levels.scss"
 import NavigationMenu from "../navigationMenu/navigationMenu";
 
-function Levels(){
+export function Levels(){
     return(
         <div >
             <NavigationMenu></NavigationMenu>
@@ -73,6 +73,4 @@ function Levels(){
             </Container>
         </div>
     );
-}
-
-export default Levels;
+};
