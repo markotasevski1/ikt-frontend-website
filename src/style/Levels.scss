@@ -1,0 +1,42 @@
+.levels{
+    display: flex;
+    max-width: 100%;
+    background-image: url("../media/levels/AboutUsPageArt_.png");
+    background-size: 1080px;
+    background-repeat: repeat;
+}   
+.level{
+    margin: 10%;
+}
+.level h1{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    color: #7FCCAC;
+}
+.cardLevel{
+    max-width: 600px;
+    height: 600px;
+    background-color: #7FCCAC;
+    border-radius: 74px;
+    padding: 35px;
+    text-align: center;
+    p{
+        text-align: left;
+        font-size: 18px;
+        margin-top: 10%;
+    } 
+    h3{
+        text-align: left;
+    }
+    button{
+        background-color: #FFB61C;
+        border-radius: 36px;
+        border: 0px;
+        color: white;
+        font-size: 20px;
+        width: 260px;
+        height: 64px;
+        margin-top: 30px;
+        box-shadow: 0px 5px 6px #0000002a;
+    }
+}

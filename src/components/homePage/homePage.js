@@ -1,8 +1,10 @@
 import CheckKnowledge from "./checkKnowledge";
 import { Container, Row, Col } from "react-bootstrap";
+import NavigationMenu from "../navigationMenu/navigationMenu";
 function homePage(){
     return(
         <div>
+            <NavigationMenu></NavigationMenu>
             <CheckKnowledge/>
             <Container fluid className="HomePage">
                 <Row>

@@ -1,4 +1,5 @@
 import { Button, Container, Row, Col } from "react-bootstrap";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import "../../style/LandingPageStyle.scss";
 
 function LandingPage(){
@@ -15,8 +16,10 @@ function LandingPage(){
                                 <p>Easy, Fun and Effective Learn German Online</p>
                             </div>
                             <div>
-                                <button>Sign in</button>
-                                <button>Register</button>
+                                <CustomLink to="/signin">Sign in</CustomLink>
+                                <CustomLink to="/register">Register</CustomLink>
+                                {/* <button>Sign in</button>
+                                <button>Register</button> */}
                             </div>
                         </div>
                     </Col>
@@ -28,5 +31,19 @@ function LandingPage(){
         </div>
     );
 }
+
+function CustomLink({to, children, ...props}){
+    const resolvedPath = useResolvedPath(to);
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true})
+  
+    return(
+        <Link to={to} {...props}>
+            <button className={isActive ? "active" : ""}>
+                {children}
+            </button>
+        </Link>
+     
+    )
+  }
 
 export default LandingPage;
