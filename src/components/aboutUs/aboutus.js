@@ -5,7 +5,6 @@ import "../../style/AboutUs.scss"
 function AboutUs(){
     return(
         <div className="aboutUs">
-            <NavigationMenu/>
             <Container fluid>
                 <Row>
                     <Col xl={6} lg={6} md={6} className="media">
