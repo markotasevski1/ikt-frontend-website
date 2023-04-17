@@ -9,7 +9,7 @@ export function NavItems() {
         <CustomLink to="/levels">Levels</CustomLink>
         <CustomLink to="/materials">Materials</CustomLink>
         <CustomLink to="/profile">Profile</CustomLink>
-        <CustomLink to="/">Log Out</CustomLink> 
+        <CustomLink to="/index">Log Out</CustomLink> 
       </ul>
     </div>
   );
