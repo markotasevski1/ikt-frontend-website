@@ -16,8 +16,7 @@ function LandingPage(){
                                 <p>Easy, Fun and Effective Learn German Online</p>
                             </div>
                             <div>
-                                <CustomLink to="/signin">Sign in</CustomLink>
-                                <CustomLink to="/register">Register</CustomLink>
+                            
                                 {/* <button>Sign in</button>
                                 <button>Register</button> */}
                             </div>

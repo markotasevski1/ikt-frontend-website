@@ -1,6 +1,5 @@
-import "../../style/RegisterStyle.scss";
-
-function Register(){
+export function RegisterForm()
+{
     return(
         <div className="register">
             <div className="registerCard">
@@ -37,4 +36,3 @@ function Register(){
         </div>
     )
 }
-export default Register;
