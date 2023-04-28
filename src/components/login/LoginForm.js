@@ -3,7 +3,8 @@ import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 const loginFormWrapperStyling = {
     display: 'flex',
     alignItems: 'center',
-    marginTop: -100
+    marginTop: -100,
+    outline:'2px solid red',
   };
   
   const panelStyle = {

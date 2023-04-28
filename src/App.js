@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';  
-import LandingPage from './components/login/landingPage'
+import LandingPage from './pages/LandingPage'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import AboutUs from './pages/AboutUs';
@@ -17,7 +17,8 @@ return(
     
     <Container fluid className='appStyle'>
       <Routes>
-        <Route exact path='/' element={<HomePage/>}/>
+        <Route path='/' element={<LandingPage/>}/>
+        <Route exact path='/home' element={<HomePage/>}/>
         <Route path='/aboutUs' element={<AboutUs/>}/>
         <Route path='/levels' element={<Levels/>}/>
         <Route path='/index' element={<LandingPage/>}/>
