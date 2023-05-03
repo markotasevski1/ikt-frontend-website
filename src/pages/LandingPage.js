@@ -1,6 +1,6 @@
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import "../../style/LandingPageStyle.scss";
+import '../style/LandingPageStyle.scss';
 
 function LandingPage(){
     return(
@@ -10,21 +10,22 @@ function LandingPage(){
                     <Col xl={5} lg={5} md={5} className="leftLogin">  
                         <div className="centerLeftLogin">
                             <div className="logoLogin">
-                                <img src={require('../../media/login/LernDeutsch (2).png')} />
+                                <img src={require('../media/login/LernDeutsch (2).png')} />
                             </div>
                             <div>
                                 <p>Easy, Fun and Effective Learn German Online</p>
                             </div>
                             <div>
-                                <CustomLink to="/signin">Sign in</CustomLink>
-                                <CustomLink to="/register">Register</CustomLink>
+                            
                                 {/* <button>Sign in</button>
                                 <button>Register</button> */}
+                                <CustomLink to="/login">Sign in</CustomLink>
+                                <CustomLink to="/register">Register</CustomLink>
                             </div>
                         </div>
                     </Col>
                     <Col xl={7} lg={7} md={7} className="rightLogin">
-                        <img src={require('../../media/login/—Pngtree—boy character computer learning illustration_6406919.png')}/>
+                        <img src={require('../media/login/—Pngtree—boy character computer learning illustration_6406919.png')}/>
                     </Col>
                 </Row>
             </Container>

@@ -5,11 +5,10 @@ export function NavItems() {
     <div className="navItems">
       <ul>
         <CustomLink to="/home">Home Page</CustomLink>
-        <CustomLink to="/aboutus">About Us</CustomLink>
-        <CustomLink to="/levels">Levels</CustomLink>
-        <CustomLink to="/materials">Materials</CustomLink>
+        <CustomLink to="/aboutUs">About Us</CustomLink>
+        <CustomLink to="/Levels">Levels</CustomLink>
         <CustomLink to="/profile">Profile</CustomLink>
-        <CustomLink to="/index">Log Out</CustomLink> 
+        <CustomLink to="/login">Log In</CustomLink> 
       </ul>
     </div>
   );
