@@ -15,6 +15,5 @@ export default function Material({courseCounter}){
                 </Card.Body>
             </Card>   
         </div>
-           
     );
 }
