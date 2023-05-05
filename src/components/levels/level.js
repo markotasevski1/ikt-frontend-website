@@ -19,7 +19,8 @@ export function Level()
                             </Card.Body>
                         </Card>
                     </div>
-                );
+                    
+                ); 
             })}
     </div>
     )
