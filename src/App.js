@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import "../src/style/AppStyle.scss"
 import Profile from './pages/Profile';
+import Materials from './pages/Materials'
 
 export function App()
 {
@@ -25,6 +26,7 @@ return(
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile' element={<Profile/>}/>
+        <Route path='/materials' element={<Materials/>}/>
       </Routes>
     </Container>
   </div>

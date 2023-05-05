@@ -1,9 +1,13 @@
-import { LevelsSection } from "../components/levels/LevelsSection";
+import { Level } from "../components/levels/level";
+import NavigationMenu from "../components/navigationMenu/navigationMenu";
 
 export default function Levels() {
   return (
     <div>
-      <LevelsSection />
+      <NavigationMenu/>
+      <div className="levelsPageStyling">
+        <Level className="levelComponents"/>
+      </div>
     </div>
   );
 }

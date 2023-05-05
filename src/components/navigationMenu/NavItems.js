@@ -7,8 +7,9 @@ export function NavItems() {
         <CustomLink to="/home">Home Page</CustomLink>
         <CustomLink to="/aboutUs">About Us</CustomLink>
         <CustomLink to="/Levels">Levels</CustomLink>
+        <CustomLink to="/Materials">Materials</CustomLink>
         <CustomLink to="/profile">Profile</CustomLink>
-        <CustomLink to="/login">Log In</CustomLink> 
+        <CustomLink to="/login">Log Out</CustomLink> 
       </ul>
     </div>
   );
