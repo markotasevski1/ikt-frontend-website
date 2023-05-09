@@ -1,18 +1,18 @@
-//Register
-.registerPageStyling{
+//Login
+.loginPageStyling{
     width: 50%;
     margin: 0 auto;
     border: 0px;
     padding-top: 4%;
 }
-.registerCardStyling{
+.loginCardStyling{
     background-color: #ffb61c;
     border-radius: 142px;
     box-shadow: 0px 5px 6px #0000002a;
 }
 
-//RegisterHeader
-.registerLogo{
+//LoginHeader
+.signinLogo{
     margin: 0 auto;
     text-align: center;
     img{
@@ -24,10 +24,10 @@
     font-weight: bold;
     margin-top: 0;
     margin-left: 15%;
-    color: #32BDC4;
+    color: #6B0E0E;
 }
 
-//RegisterForm
+//LoginForm
 .panelStyle{
     width: 80%;
     margin: 0 auto;
@@ -85,7 +85,7 @@
         background: #6B0E0E;
     }
 }
-//RegisterFormFooter
+//LoginFormFooter
 .shortcutLogin {
     a{
         margin: 2%;

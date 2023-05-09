@@ -1,38 +1,33 @@
-export function RegisterForm()
+import React from 'react';
+import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+
+export default function RegisterForm()
 {
     return(
-        <div className="register">
-            <div className="registerCard">
-                <div className="registerLogo">
-                    <img src={require("../../media/login/LernDeutsch (2).png")}/>
+        <Card className='panelStyle'>
+            <Form horizontal className="RegisterForm" id="RegisterForm">
+                <FormGroup controlId="formFullname" className='formGroup'>
+                    <FormControl type="fullname" placeholder="Full Name" className='formInput' />
+                </FormGroup>
+                <FormGroup controlId="formUsername" className='formGroup'>
+                    <FormControl type="username" placeholder="Username" className='formInput' />
+                </FormGroup>
+                <FormGroup controlId="formEmail" className='formGroup'>
+                    <FormControl type="email" placeholder="Email" className='formInput'/>
+                </FormGroup>
+                <FormGroup controlId="formPassword" className='formGroup'>
+                    <FormControl type="password" placeholder="Password" className='formInput' />
+                </FormGroup>
+                <FormGroup controlId="formPassword" className='formGroup'>
+                    <FormControl type="password" placeholder="Repeat Password" className='formInput' />
+                </FormGroup>
+                <div className="formGroup">
+                    <label className="forgotPassword"><a href="">Forgot password?</a></label>
                 </div>
-                <div className="label">
-                        <p>Register</p>
-                    </div>
-                <div className="registerForm">
-                    <div className="form-group">
-                        <input type="name" id="inputName" placeholder="Full Name"></input>
-                    </div>
-                    <div className="form-group">
-                        <input type="username" id="inputUsername" placeholder="Pick a username"></input>
-                    </div>
-                    <div className="form-group">
-                        <input type="email" id="inputEmail" placeholder="Email"></input>
-                    </div>
-                    <div className="form-group">
-                        <input type="password" id="inputPassword" placeholder="Password"></input>
-                    </div>
-                    <div className="form-group">
-                        <input type="password" id="inputConfirmPassword" placeholder="Repeat password"></input>
-                    </div>  
-                    <div className="form-group">
-                        <button>Register</button>
-                    </div>
-                    <div className="form-group">
-                        <label>Have an account? <a href="">Sign In</a></label>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <FormGroup className='formGroup' controlId="formSubmit">
+                    <Button type="submit" className='btn formButton'>Login</Button>
+                </FormGroup>
+            </Form>
+        </Card>
     )
 }

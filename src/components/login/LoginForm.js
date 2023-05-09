@@ -1,47 +1,25 @@
 import React from 'react';
 import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
-const loginFormWrapperStyling = {
-    display: 'flex',
-    alignItems: 'center',
-    marginTop: -100,
-    outline:'2px solid red',
-  };
-  
-  const panelStyle = {
-    border: 0,
-    paddingLeft: 20,
-    paddingRight: 20,
-    width: 300,
-    outline:'2px solid red',
-  };
-  
-  const buttonStyle = {
-    marginBottom: 0
-  };
 
 export function LoginForm()
 {
-    return (
-      <div style={loginFormWrapperStyling}>
-        <Card style={panelStyle}>
-          <Form horizontal className="LoginForm" id="loginForm">
-            <FormGroup controlId="formEmail">
-              <FormControl type="email" placeholder="Email Address" />
-            </FormGroup>
-            <FormGroup controlId="formPassword">
-              <FormControl type="password" placeholder="Password" />
-            </FormGroup>
-            <div className="form-group">
-                        <label className="forgotPassword"><a href="">Forgot password?</a></label>
-                    </div>
-            <FormGroup style={buttonStyle} controlId="formSubmit">
-              <Button bsStyle="primary" type="submit" >
-                login
-              </Button>
-            </FormGroup>
-          </Form>
-        </Card>
-      </div>
-    )
+  return (
+    <Card className='panelStyle'>
+      <Form horizontal className="LoginForm" id="loginForm">
+        <FormGroup controlId="formEmail" className='formGroup'>
+          <FormControl type="email" placeholder="Email Address" className='formInput'/>
+        </FormGroup>
+        <FormGroup controlId="formPassword" className='formGroup'>
+          <FormControl type="password" placeholder="Password" className='formInput'/>
+        </FormGroup>
+        <div className="formGroup">
+          <label className="forgotPassword"><a href="">Forgot password?</a></label>
+        </div>
+        <FormGroup className='formGroup' controlId="formSubmit">
+          <Button type="submit" className='btn formButton'>Login</Button>
+        </FormGroup>
+      </Form>
+    </Card>
+  )
 
 }
