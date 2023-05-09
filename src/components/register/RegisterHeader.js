@@ -1,12 +1,12 @@
-export function LoginHeader()
+export default function RegisterHeader()
 {
     return (
         <div>
-            <div className="signinLogo">
+            <div className="registerLogo">
                 <img src={require("../../media/login/LernDeutsch (2).png")}/>
             </div>
             <div className="label">
-                <p>Sign In</p>
+                <p>Register</p>
             </div>
         </div>
     )
