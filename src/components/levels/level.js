@@ -1,4 +1,4 @@
-import { Card, Container, Button} from "react-bootstrap";
+import { Card, Button} from "react-bootstrap";
 import "../../style/Levels.scss"
 import {levelsData} from "../../data/LevelsData"
 
