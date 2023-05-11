@@ -1,33 +1,108 @@
-import React from 'react';
-import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import React, { useState } from 'react'
+import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap'
+import axios from '../../api/axios'
 
-export default function RegisterForm()
-{
-    return(
-        <Card className='panelStyle'>
-            <Form horizontal className="RegisterForm" id="RegisterForm">
-                <FormGroup controlId="formFullname" className='formGroup'>
-                    <FormControl type="fullname" placeholder="Full Name" className='formInput' />
-                </FormGroup>
-                <FormGroup controlId="formUsername" className='formGroup'>
-                    <FormControl type="username" placeholder="Username" className='formInput' />
-                </FormGroup>
-                <FormGroup controlId="formEmail" className='formGroup'>
-                    <FormControl type="email" placeholder="Email" className='formInput'/>
-                </FormGroup>
-                <FormGroup controlId="formPassword" className='formGroup'>
-                    <FormControl type="password" placeholder="Password" className='formInput' />
-                </FormGroup>
-                <FormGroup controlId="formPassword" className='formGroup'>
-                    <FormControl type="password" placeholder="Repeat Password" className='formInput' />
-                </FormGroup>
-                <div className="formGroup">
-                    <label className="forgotPassword"><a href="">Forgot password?</a></label>
-                </div>
-                <FormGroup className='formGroup' controlId="formSubmit">
-                    <Button type="submit" className='btn formButton'>Login</Button>
-                </FormGroup>
-            </Form>
-        </Card>
-    )
+const REGISTER_URL = '/auth/register'
+export default function RegisterForm() {
+  const [firstName, setFullName] = useState('')
+  const [username, setUserName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await axios.post(
+        REGISTER_URL,
+        JSON.stringify({  username,firstName, lastName,email, password, role: 'Tutor' }),
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            withCredentials: true,
+          },
+        }
+      )
+      console.log(response.data)
+      console.log(response.status)
+      console.log(response.accessToken)
+    } catch (error) {
+      if(!error.response)
+      {
+        console.log('nejkje da se povrze so serverot')
+      }
+    }
+  }
+
+  return (
+    <Card className="panelStyle">
+      <Form
+        horizontal
+        className="RegisterForm"
+        id="RegisterForm"
+        onSubmit={handleSubmit}
+      >
+        <FormGroup controlId="formFullname" className="formGroup">
+          <input
+            type="name"
+            placeholder="Full Name"
+            id="firstName"
+            className="formInput"
+            value={firstName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
+        </FormGroup>
+        <FormGroup controlId="formUsername" className="formGroup">
+          <input
+            type="username"
+            placeholder="Username"
+            id="username"
+            className="formInput"
+            value={username}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </FormGroup>
+        <FormGroup controlId="lastName" className="formGroup">
+          <input
+            type="lastName"
+            placeholder="lastName"
+            id="lastName"
+            className="formInput"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </FormGroup>
+        <FormGroup controlId="formEmail" className="formGroup">
+          <input
+            type="email"
+            placeholder="Email"
+            id="email"
+            className="formInput"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </FormGroup>
+        <FormGroup controlId="formPassword" className="formGroup">
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            className="formInput"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </FormGroup>
+        <div className="formGroup">
+          <label className="forgotPassword">
+            <a href="">Forgot password?</a>
+          </label>
+        </div>
+        <FormGroup className="formGroup" controlId="formSubmit">
+          <Button type="submit" className="btn formButton">
+            Sign up
+          </Button>
+        </FormGroup>
+      </Form>
+    </Card>
+  )
 }
