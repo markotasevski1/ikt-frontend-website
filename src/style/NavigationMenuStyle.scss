@@ -1,7 +1,7 @@
 .navigationMenu {
     display: flex;
     background-color: #ffb61c;
-    height: 120px;
+    height: 10%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 0px;
     padding: 0px;
@@ -9,17 +9,20 @@
     .logoNavMenu{
         margin-left: 5%;
         img{
-            width: 230px;
+            width: 50%;
+            margin-top: 2%;
         }
     }
 }
 .navItems{
     margin-left: auto;
-    margin-right: 4%;
-    margin-top: 21px;
+    margin-right: 1%;
+    margin-top: 1%;
+    width: 100%;
     ul{
         display: flex;
         list-style-type: none;
+        float: right;
     }
     li{
         margin: 23px;
@@ -27,7 +30,7 @@
             text-decoration: none;
             display: inline;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 25px;
+            font-size: 22px;
             color: white;
             padding: 18px;
         }
