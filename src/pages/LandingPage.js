@@ -12,13 +12,10 @@ function LandingPage(){
                             <div className="logoLogin">
                                 <img src={require('../media/login/LernDeutsch (2).png')} />
                             </div>
-                            <div>
+                            <div className="leftText">
                                 <p>Easy, Fun and Effective Learn German Online</p>
                             </div>
                             <div>
-                            
-                                {/* <button>Sign in</button>
-                                <button>Register</button> */}
                                 <CustomLink to="/login">Sign in</CustomLink>
                                 <CustomLink to="/register">Register</CustomLink>
                             </div>
