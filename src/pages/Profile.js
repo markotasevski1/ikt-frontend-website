@@ -3,7 +3,7 @@ import NavigationMenu from "../components/navigationMenu/navigationMenu"
 export default function Profile()
 {
     return (
-        <div style={{height: window.innerHeight}}> 
+        <div > 
             <NavigationMenu/>
             <PersonDashboard/>
         </div>
