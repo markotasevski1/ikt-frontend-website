@@ -15,7 +15,14 @@ export default function RegisterForm() {
     try {
       const response = await axios.post(
         REGISTER_URL,
-        JSON.stringify({  username,firstName, lastName,email, password, role: 'Tutor' }),
+        JSON.stringify({
+          username,
+          firstName,
+          lastName,
+          email,
+          password,
+          role: 'Tutor',
+        }),
         {
           headers: {
             'Content-Type': 'application/json',
@@ -27,8 +34,7 @@ export default function RegisterForm() {
       console.log(response.status)
       console.log(response.accessToken)
     } catch (error) {
-      if(!error.response)
-      {
+      if (!error.response) {
         console.log('nejkje da se povrze so serverot')
       }
     }
@@ -52,16 +58,6 @@ export default function RegisterForm() {
             onChange={(e) => setFullName(e.target.value)}
           />
         </FormGroup>
-        <FormGroup controlId="formUsername" className="formGroup">
-          <input
-            type="username"
-            placeholder="Username"
-            id="username"
-            className="formInput"
-            value={username}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </FormGroup>
         <FormGroup controlId="lastName" className="formGroup">
           <input
             type="lastName"
@@ -72,6 +68,17 @@ export default function RegisterForm() {
             onChange={(e) => setLastName(e.target.value)}
           />
         </FormGroup>
+        <FormGroup controlId="formUsername" className="formGroup">
+          <input
+            type="username"
+            placeholder="Username"
+            id="username"
+            className="formInput"
+            value={username}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </FormGroup>
+
         <FormGroup controlId="formEmail" className="formGroup">
           <input
             type="email"
