@@ -10,7 +10,7 @@ import { Container } from 'react-bootstrap';
 import "../src/style/AppStyle.scss"
 import Profile from './pages/Profile';
 import Materials from './pages/Materials'
-
+import Certificate from './components/certificate/Certificate';
 export function App()
 {
 return(
@@ -26,6 +26,7 @@ return(
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile' element={<Profile/>}/>
+        <Route path='/certificate' element={<Certificate/>}/>
         <Route path='/materials' element={<Materials/>}/>
       </Routes>
     </Container>

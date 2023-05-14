@@ -1,8 +1,11 @@
+import { ProfileCard } from './ProfileCard';
+import '../../style/Profile.scss'
+
 export function PersonDashboard()
 {
     return(
-        <div>
-            personDashboard
-        </div>
+        <div className='dashboard' >
+        <ProfileCard/>
+    </div>
     )
 }
