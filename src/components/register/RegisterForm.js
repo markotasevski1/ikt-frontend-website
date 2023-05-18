@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap'
 import axios from '../../api/axios'
+import { useNavigate } from 'react-router-dom';
 
 const REGISTER_URL = '/auth/register'
 export default function RegisterForm() {
@@ -9,6 +10,7 @@ export default function RegisterForm() {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -33,6 +35,10 @@ export default function RegisterForm() {
       console.log(response.data)
       console.log(response.status)
       console.log(response.accessToken)
+      if (response.status === 200) {
+        // Redirect the user to the desired page
+        navigate('/home');
+      }
     } catch (error) {
       if (!error.response) {
         console.log('nejkje da se povrze so serverot')
