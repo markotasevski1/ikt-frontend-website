@@ -37,7 +37,7 @@ export default function RegisterForm() {
       console.log(response.accessToken)
       if (response.status === 200) {
         // Redirect the user to the desired page
-        navigate('/home');
+        navigate('/login');
       }
     } catch (error) {
       if (!error.response) {
