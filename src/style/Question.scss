@@ -1,0 +1,39 @@
+//QuestionCard
+.questionCard{
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid red;
+    background-color: #79CCD2;
+    text-align: center;
+}
+.question{
+    margin: 8%;
+    font-size: 35px;
+    color: white;
+}
+.answer{
+    background-color: white;
+    border: 0px;
+    border-radius: 36px;
+    min-height: 60px;
+    width: 70%;
+    margin: 4%;
+    font-size: 26px;
+    color: #1D669F;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+.btn:hover{
+    background-color: #1D669F;
+    color: white;
+}
+.next{
+    float: right;
+    width: 20%;
+    margin: 3%;
+    border-radius: 36px;
+    border: 0px;
+    font-size: 22px;
+    background-color: white;
+    color: #1D669F;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
