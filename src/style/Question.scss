@@ -2,13 +2,13 @@
 .questionCard{
     width: 60%;
     margin: 0 auto;
-    border: 1px solid red;
+    border: 0px;
     background-color: #79CCD2;
     text-align: center;
 }
 .question{
-    margin: 8%;
-    font-size: 35px;
+    margin: 6%;
+    font-size: 42px;
     color: white;
 }
 .answer{
@@ -19,6 +19,7 @@
     width: 70%;
     margin: 4%;
     font-size: 26px;
+    font-weight: 500;
     color: #1D669F;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
@@ -26,14 +27,74 @@
     background-color: #1D669F;
     color: white;
 }
-.next{
-    float: right;
+.btn:disabled{
+    background-color: #1d679fbd;
+}
+.next, .prev{
     width: 20%;
-    margin: 3%;
+    margin: 3% 15%;
     border-radius: 36px;
     border: 0px;
     font-size: 22px;
+    font-weight: 500;
     background-color: white;
     color: #1D669F;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+//QuestionNum
+.barContainer{
+    width: 100vw;
+    height: 10vh;
+}
+.progress{
+    background-color: #BDE7EA;
+}
+.progress-bar{
+    background-color: #2b9ea7;
+    width: 10%;
+}
+.numQuestion{
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    margin-top: 1%;
+}
+
+//Score
+.score{
+    background-image: url("../media/question/backgroundScore.png");
+    height: 100vh;
+    padding-top: 7%;
+}
+
+//ScoreCard
+.scoreCard{
+    margin: 0 auto;
+    width: 50%;
+    border: 1px solid #2b9ea7;
+    border-radius: 148px;
+    background-color: white;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    color: #1D669F;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    .text1{
+        margin: 7%;
+    }
+    .btn{
+        width: 200px;
+        height: 50px;
+        font-size: 22px;
+        background-color: #A1DBDF;
+        border: 0px;
+        color: #1D669F;
+        margin: 7%;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    }
+    .btn:hover{
+        background-color: #1D669F;
+        color: white;
+    }
 }
