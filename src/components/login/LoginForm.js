@@ -1,14 +1,28 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import { useState } from 'react'
 import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap'
 import axios from '../../api/axios'
 import { useNavigate } from 'react-router-dom'
+import { useRef } from 'react'
+import AuthContext from '../../context/AuthProvider'
 
 const LOGIN_URL = '/auth/login'
-let token = null
+
 export function LoginForm() {
+  const { setAuth } = useContext(AuthContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [errMsg, setErrMsg] = useState('')
+  const errRef = useRef(null)
+  //const userRef = useRef(null)
+
+  // useEffect(() => {
+  //   userRef.current.focus()
+  // }, [])
+  useEffect(() => {
+    setErrMsg('Cannot login')
+  }, [email, password])
+
   const navigate = useNavigate()
   const handleLoginSubmit = async (e) => {
     e.preventDefault()
@@ -23,29 +37,32 @@ export function LoginForm() {
           },
         }
       )
-      console.log(response.data)
-      console.log(response.status)
-      console.log(response.accessToken)
+      console.log(JSON.stringify(response.data.token));
+      const accessToken=response.token
+      setAuth({email,password, accessToken})
       if (response.status === 200) {
         navigate('/home')
-        token = response.data.token
       }
     } catch (error) {
       console.log('Invalid credentials')
+      console.log(Response)
     }
   }
   return (
     <Card className="panelStyle">
+      <p ref={errRef} className={errMsg ? 'error' : 'offscreenError'}>
+        {errMsg}
+      </p>
       <Form
         horizontal
         className="LoginForm"
-        id="loginForm"
+        controlId="loginForm"
         onSubmit={handleLoginSubmit}
       >
         <FormGroup controlId="formEmail" className="formGroup">
           <FormControl
             type="email"
-            id="email"
+            controlId ="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email Address"
@@ -54,7 +71,7 @@ export function LoginForm() {
         </FormGroup>
         <FormGroup controlId="formPassword" className="formGroup">
           <FormControl
-            id="password"
+            controlId ="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
@@ -64,6 +81,7 @@ export function LoginForm() {
         </FormGroup>
         <div className="formGroup">
           <label className="forgotPassword">
+            {/**put router link here */}
             <a href="">Forgot password?</a>
           </label>
         </div>

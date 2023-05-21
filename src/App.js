@@ -11,6 +11,7 @@ import "../src/style/AppStyle.scss"
 import Profile from './pages/Profile';
 import Materials from './pages/Materials'
 import Certificate from './components/certificate/Certificate';
+import CoursesPage from './pages/Courses';
 export function App()
 {
 return(
@@ -28,6 +29,7 @@ return(
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/certificate' element={<Certificate/>}/>
         <Route path='/materials' element={<Materials/>}/>
+        <Route path='/courses' element={<CoursesPage/>}/>
       </Routes>
     </Container>
   </div>
