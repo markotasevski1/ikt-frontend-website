@@ -11,6 +11,8 @@ import "../src/style/AppStyle.scss"
 import Profile from './pages/Profile';
 import Materials from './pages/Materials'
 import Certificate from './components/certificate/Certificate';
+import Question from './components/question/Question';
+import Score from './components/question/Score'
 export function App()
 {
 return(
@@ -28,6 +30,8 @@ return(
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/certificate' element={<Certificate/>}/>
         <Route path='/materials' element={<Materials/>}/>
+        <Route path='/question' element={<Question/>}/>
+        <Route path='/score' element={<Score/>}/>
       </Routes>
     </Container>
   </div>
