@@ -12,6 +12,8 @@ import Profile from './pages/Profile';
 import Materials from './pages/Materials'
 import Certificate from './components/certificate/Certificate';
 import CoursesPage from './pages/Courses';
+import Question from './components/question/Question';
+import Score from './components/question/Score'
 export function App()
 {
 return(
@@ -30,6 +32,8 @@ return(
         <Route path='/certificate' element={<Certificate/>}/>
         <Route path='/materials' element={<Materials/>}/>
         <Route path='/courses' element={<CoursesPage/>}/>
+        <Route path='/question' element={<Question/>}/>
+        <Route path='/score' element={<Score/>}/>
       </Routes>
     </Container>
   </div>
