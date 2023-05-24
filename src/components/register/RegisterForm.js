@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const REGISTER_URL = '/auth/register'
 export default function RegisterForm() {
   const [firstName, setFullName] = useState('')
-  const [username, setUserName] = useState('')
+  const [userName, setUserName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -18,7 +18,7 @@ export default function RegisterForm() {
       const response = await axios.post(
         REGISTER_URL,
         JSON.stringify({
-          username,
+          userName,
           firstName,
           lastName,
           email,
@@ -36,7 +36,7 @@ export default function RegisterForm() {
       //console.log(response.status)
       // console.log(response.accessToken)
       if (response.status === 200) {
-        // Redirect the user to the desired page.
+      // Redirect the user to the desired page.
         navigate('/login')
       }
     } catch (error) {
@@ -76,11 +76,11 @@ export default function RegisterForm() {
         </FormGroup>
         <FormGroup controlId="formUsername" className="formGroup">
           <input
-            type="username"
-            placeholder="Username"
-            id="username"
+            type="userName"
+            placeholder="userName"
+            id="userName"
             className="formInput"
-            value={username}
+            value={userName}
             onChange={(e) => setUserName(e.target.value)}
           />
         </FormGroup>
