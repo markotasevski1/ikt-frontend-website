@@ -1,5 +1,8 @@
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import "../../style/NavigationMenuStyle.scss";
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+import '../../style/NavigationMenuStyle.scss'
+const logoutFunction = () => {
+  sessionStorage.removeItem('token')
+}
 export function NavItems() {
   return (
     <div className="navItems">
@@ -9,18 +12,22 @@ export function NavItems() {
         <CustomLink to="/Levels">Levels</CustomLink>
         <CustomLink to="/Materials">Materials</CustomLink>
         <CustomLink to="/profile">Profile</CustomLink>
-        <CustomLink to="/login">Log Out</CustomLink> 
+        <CustomLink to="/tutors">Tutors</CustomLink>
+        <CustomLink to="/question">Questions</CustomLink>
+        <CustomLink to="/login">
+          <button onClick={logoutFunction}>Log out</button>
+        </CustomLink>
       </ul>
     </div>
-  );
+  )
 }
 
-function CustomLink({to, children, ...props}){
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true})
+function CustomLink({ to, children, ...props }) {
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
-  return(
-    <li className={isActive ? "active" : ""}>
+  return (
+    <li className={isActive ? 'active' : ''}>
       <Link to={to} {...props}>
         {children}
       </Link>

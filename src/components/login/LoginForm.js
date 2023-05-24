@@ -1,16 +1,13 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap'
-import {useContext} from 'react'
 import axios from '../../api/axios'
 import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
-import { AuthContext } from '../../context/AuthProvider'
 
 const LOGIN_URL = '/auth/login'
 
 export function LoginForm() {
-  const { setAuth } = useContext(AuthContext);
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errMsg, setErrMsg] = useState('')
@@ -40,14 +37,14 @@ export function LoginForm() {
       )
 
       const accessToken = response.data.token
-      setAuth(accessToken); 
+console.log(response)
+      sessionStorage.setItem('token', accessToken)
+      sessionStorage.setItem('username', response.data.userName)
       if (response.status === 200) {
         navigate('/home')
-      
       }
     } catch (error) {
       console.log('Invalid credentials')
-      
     }
   }
   return (
@@ -56,7 +53,6 @@ export function LoginForm() {
         {errMsg}
       </p>
       <Form
-        
         className="LoginForm"
         controlId="loginForm"
         onSubmit={handleLoginSubmit}

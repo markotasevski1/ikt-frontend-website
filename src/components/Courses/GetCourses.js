@@ -1,43 +1,44 @@
-import axios from '../../api/axios';
-import { useEffect, useState , useContext} from 'react';
-import { useAuthToken } from '../../context/AuthProvider';
-const COURSES_URL = '/courses';
+import axios from '../../api/axios'
+import { useState, useEffect } from 'react'
+
+const COURSES_URL = '/courses'
 
 export function GetCourses() {
-  const [courses, setCourses] = useState([]);
-  const {authToken} = useContext(useAuthToken)
-  console.log(authToken)
+  const [courses, setCourses] = useState([])
+  const authTokenSession = sessionStorage.getItem('token')
+  console.log(authTokenSession)
+  
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        // Set the request headers with the bearer token
         const headers = {
-          Authorization: `Bearer ${authToken}`,
-        };
-
-        // Make the API request with the headers
-        const response = await axios.get(COURSES_URL, { headers });
-        setCourses(response.data);
+          Authorization: `Bearer ${authTokenSession}`,
+        }
+  
+        const response = await axios.get(COURSES_URL, { headers })
+        setCourses(response.data)
+        console.log(response.data)
       } catch (error) {
-        console.error(error);
+        console.error(error)
       }
-    };
-
-    fetchCourses();
-  });
+    }
+  
+    fetchCourses()
+  }, []) // Empty dependency array ensures the effect runs only once
 
   return (
     <div>
+      <div>CoursesPage</div>
       {courses.map((course) => (
         <div key={course.id}>
           <h3>Course Name: {course.name}</h3>
-          <p>Level: {course.level}</p>
-          <p>Length: {course.length}</p>
-          <p>Price: {course.price}</p>
-          <p>Tutor ID: {course.tutorId}</p>
+          <p>Level: {course.courseId}</p>
+          <p>Length: {course.level}</p>
+          <p>Price: {course.length}</p>
+          <p>Tutor ID: {course.price}</p>
           <hr />
         </div>
       ))}
     </div>
-  );
+  )
 }
