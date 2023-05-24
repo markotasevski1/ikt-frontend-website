@@ -1,4 +1,4 @@
-import CheckKnowledge from './checkKnowledge'
+import  CheckKnowledge  from './checkKnowledge'
 import { Container, Row, Col } from 'react-bootstrap'
 import NavigationMenu from '../navigationMenu/navigationMenu'
 function homePage() {
