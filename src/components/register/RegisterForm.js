@@ -32,9 +32,9 @@ export default function RegisterForm() {
           },
         }
       )
-      console.log(response.data)
-      console.log(response.status)
-      console.log(response.accessToken)
+      //console.log(response.data)
+      //console.log(response.status)
+      // console.log(response.accessToken)
       if (response.status === 200) {
         // Redirect the user to the desired page.
         navigate('/login')
@@ -49,7 +49,7 @@ export default function RegisterForm() {
   return (
     <Card className="panelStyle">
       <Form
-        horizontal
+        
         className="RegisterForm"
         id="RegisterForm"
         onSubmit={handleSubmit}

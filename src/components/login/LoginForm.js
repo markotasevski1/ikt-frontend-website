@@ -1,15 +1,16 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap'
+import {useContext} from 'react'
 import axios from '../../api/axios'
 import { useNavigate } from 'react-router-dom'
 import { useRef } from 'react'
-import AuthContext from '../../context/AuthProvider'
+import { AuthContext } from '../../context/AuthProvider'
 
 const LOGIN_URL = '/auth/login'
 
 export function LoginForm() {
-  const { setAuth } = useContext(AuthContext)
+  const { setAuth } = useContext(AuthContext);
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errMsg, setErrMsg] = useState('')
@@ -37,15 +38,16 @@ export function LoginForm() {
           },
         }
       )
-      console.log(JSON.stringify(response.data.token));
-      const accessToken=response.token
-      setAuth({email,password, accessToken})
+
+      const accessToken = response.data.token
+      setAuth(accessToken); 
       if (response.status === 200) {
         navigate('/home')
+      
       }
     } catch (error) {
       console.log('Invalid credentials')
-      console.log(Response)
+      
     }
   }
   return (
@@ -54,7 +56,7 @@ export function LoginForm() {
         {errMsg}
       </p>
       <Form
-        horizontal
+        
         className="LoginForm"
         controlId="loginForm"
         onSubmit={handleLoginSubmit}
@@ -62,7 +64,7 @@ export function LoginForm() {
         <FormGroup controlId="formEmail" className="formGroup">
           <FormControl
             type="email"
-            controlId ="email"
+            controlId="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email Address"
@@ -71,7 +73,7 @@ export function LoginForm() {
         </FormGroup>
         <FormGroup controlId="formPassword" className="formGroup">
           <FormControl
-            controlId ="password"
+            controlId="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
