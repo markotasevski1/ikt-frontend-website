@@ -28,7 +28,10 @@ export function MaterialSection(){
     }, []) // Empty dependency array ensures the effect runs only once
 
     const materialComponents = [];
-
+// for(let i=0; i<courses.length; i++)
+// {
+//     materialComponents.push(<Material key={i} courses={i}/>);
+// }
     for (let i=1; i<5; i++){
         materialComponents.push(<Material key={i} courseCounter={i}/>);
     }

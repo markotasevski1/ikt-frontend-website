@@ -23,7 +23,8 @@ export default function TutorsPage() {
     }
     getTutors()
   }, [])
-
+// for testing tutor id 5eb0cc82-ac92-445f-8a5c-08db57fb7184
+// user id 8052b986-c34b-4b98-bea8-87e532bd79cf
   return (
     <div>
       <NavigationMenu />
@@ -31,6 +32,7 @@ export default function TutorsPage() {
         {tutors.map((tutor) => (
           <div className="tutor-styling">
             <h1>Tutor's name: {tutor.baseUser.firstName}</h1>
+            <h2>Tutor's email: {tutor.baseUser.email}</h2>
             <h2>Tutor's email: {tutor.baseUser.email}</h2>
           </div>
         ))}
