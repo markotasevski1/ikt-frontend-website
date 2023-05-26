@@ -18,6 +18,7 @@ export function NavItems() {
           <button onClick={logoutFunction}>Log out</button>
         </CustomLink>
       </ul>
+      <img src={require('../../media/homePage/hamburger_menu.png')} />
     </div>
   )
 }
