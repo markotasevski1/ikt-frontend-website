@@ -15,6 +15,8 @@ import CoursesPage from './pages/Courses'
 import Question from './components/question/Question'
 import Score from './components/question/Score'
 import TutorsPage from './pages/Tutors'
+import CheckoutPage from './components/CreditCard/CheckoutPage'
+import Lessons from './components/Lessons/Lessons'
 export function App() {
   return (
     <div>
@@ -34,6 +36,8 @@ export function App() {
           <Route path="/question" element={<Question />} />
           <Route path="/score" element={<Score />} />
           <Route path="/tutors" element={<TutorsPage />} />
+          <Route path="/CheckoutPage" element={<CheckoutPage />} />
+          <Route path="/lesson" element={<Lessons />} />
         </Routes>
       </Container>
     </div>

@@ -6,7 +6,7 @@ const COURSES_URL = '/courses'
 export function GetCourses() {
   const [courses, setCourses] = useState([])
   const authTokenSession = sessionStorage.getItem('token')
-  console.log(authTokenSession)
+
   
   useEffect(() => {
     const fetchCourses = async () => {
@@ -17,7 +17,7 @@ export function GetCourses() {
   
         const response = await axios.get(COURSES_URL, { headers })
         setCourses(response.data)
-        console.log(response.data)
+   
       } catch (error) {
         console.error(error)
       }
