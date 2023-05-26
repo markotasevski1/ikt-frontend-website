@@ -4,7 +4,7 @@ import "../../style/AboutUs.scss"
 export default function AboutUsSection(){
     return(
         <Container fluid className="aboutUs">
-            <Row>
+            <Row className="aboutUsSectionContentWrapperStyling">
                 <Col xl={6} lg={6} md={6} className="media">
                     <img src={require("../../media/aboutUs/—Pngtree—e-learning illustration of lecturer_6579796.png")}/> 
                 </Col>

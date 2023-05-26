@@ -4,7 +4,7 @@ body, html {
     padding: 0;
     margin: 0;
 }
-        
+
 .imgCheckKnowlegde{
     padding: 4% 0%;
     margin: 0px;
@@ -24,13 +24,26 @@ body, html {
 }
 .activateTest{
     padding: 60px;
+display:flex;
+flex-direction:column;
+justify-content: center;
+align-items: center;
     p{
         color: white;
-        font-size: 24px;
+        font-size: 20px;
         font-family: Arial, Helvetica, sans-serif;
+        @media (max-width: 768px) {
+            /* Media query for screens with maximum width of 768px */
+            font-size: 18px;
+          }
+      
+          @media (max-width: 480px) {
+            /* Media query for screens with maximum width of 480px */
+            font-size: 12px;
+          }
     }
     button{
-        width: 420px;
+        width: 70%;
         height: 72px;
         margin-top: 5%;
         font-size: 22px;
@@ -38,9 +51,13 @@ body, html {
         border: 0px;
         border-radius: 36px;
         background-color: white;
+        color:black;
+        @media(max-width: 768px){
+width:90%;
+            font-size: 16px;
+        }
     }
 }
-
 .HomePage{
     width: 100%;
     p{
@@ -57,6 +74,7 @@ body, html {
     .containerHomePage{
         margin-top: 8%;
         margin-bottom: 10%;
+        font-size:10px;
     }
     .footer{
         height: 90px;

@@ -21,7 +21,7 @@ export function Level() {
     fetchLevels()
   }, [])
   return (
-    <div>
+    <div className='LevelComponentWrapperStyling'>
       {levelsData.map((data, key) => {
         return (
           <div className="levelComponent" key={key}>
