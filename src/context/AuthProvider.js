@@ -8,7 +8,7 @@ export function useAuthToken() {
 
 export const AuthProvider = ({ children }) => {
   const [authToken, setAuth] = useState('empty')
-  console.log(authToken)
+  //console.log(authToken)
   return (
     <AuthContext.Provider value={{ authToken, setAuth }}>
       {children}

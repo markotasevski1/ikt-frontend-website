@@ -6,7 +6,7 @@ export function ProfileCard() {
   const authTokenSession = sessionStorage.getItem('token')
   const authUserName = sessionStorage.getItem('username')
   const [userInfo, setUserInfo] = useState([])
-  console.log(authTokenSession)
+
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {

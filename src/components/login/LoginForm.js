@@ -37,7 +37,7 @@ export function LoginForm() {
       )
 
       const accessToken = response.data.token
-console.log(response)
+
       sessionStorage.setItem('token', accessToken)
       sessionStorage.setItem('username', response.data.userName)
       if (response.status === 200) {

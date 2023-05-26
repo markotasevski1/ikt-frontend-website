@@ -1,29 +1,49 @@
 import { Card, Button } from 'react-bootstrap'
 import '../../style/Material.scss'
+import { useNavigate } from 'react-router-dom'
+export default function Material({
+  courseId,
+  name,
+  level,
+  length,
+  price,
+  tutor,
+  students,
+  lessons,
+}) {
+  const navigate = useNavigate()
 
-export default function Material({ courseCounter }) {
+  const handlePayment = () => {
+    navigate('/CheckoutPage')
+  }
+  const viewLessons = () => {
+    navigate('/lesson')
+  }
   return (
     <div className="materialComponent">
-      <h2 style={{ color: '#1C1C83' }}>Course {courseCounter}</h2>
+      <h2 style={{ color: '#1C1C83' }}>Course {name}</h2>
       <Card className="materialCardStyling">
         <Card.Body>
           <Card.Text className="materialCardElementStyling">
-            Course name:{' '}
+            Course name:{name}
           </Card.Text>
           <Card.Text className="materialCardElementStyling">
-            Card level:
+            Course level:{level}
           </Card.Text>
           <Card.Text className="materialCardElementStyling">
-            Card length:
+            Card length:{length}
           </Card.Text>
           <Card.Text className="materialCardElementStyling">
-            Card price:
+            Buy course price:{price}
           </Card.Text>
           <Card.Text className="materialCardElementStyling">
-            Card tutorId:
+            Course tutor tutor id:{tutor}
           </Card.Text>
-          <Button className="materialCardButtonStyling" href="#">
+          <Button className="materialCardButtonStyling" onClick={handlePayment}>
             Buy
+          </Button>
+          <Button className="materialCardButtonStyling" onClick={viewLessons}>
+            View Lessons
           </Button>
         </Card.Body>
       </Card>
