@@ -43,6 +43,60 @@ export default function RegisterForm() {
     }
   }
 
+  //passwordStrength
+  const [poorPassword, setPoorPassword] = useState(false);
+  const [weakPassword, setWeakPassword] = useState(false);
+  const [strongPassword, setStrongPassword] = useState(false);
+  const [passwordError, setPasswordErr] = useState("");
+  const [button, setButton] = useState(true);
+
+  const passwordStrength = (evnt) => {
+    const passwordValue = password;
+    const passwordLength = passwordValue.length;
+    const poorRegExp = /[a-z]/;
+    const weakRegExp = /(?=.*?[0-9])/;;
+    const strongRegExp = /(?=.*?[#?!@$%^&*-])/;
+    const whitespaceRegExp = /^$|\s+/;
+    const poorPassword = poorRegExp.test(passwordValue);
+    const weakPassword = weakRegExp.test(passwordValue);
+    const strongPassword = strongRegExp.test(passwordValue);
+    const whiteSpace = whitespaceRegExp.test(passwordValue);
+
+    if (passwordValue === '') {
+      setPasswordErr("Password is Empty");
+      setButton(true);
+    } else {
+
+      // to check whitespace
+      if (whiteSpace) {
+        setPasswordErr("Whitespaces are not allowed");
+        setButton(true);
+      }
+      // to check poor password
+      if (passwordLength <= 3 && (poorPassword || weakPassword || strongPassword)) {
+        setPoorPassword(true);
+        setButton(true);
+        setPasswordErr("Password is Poor. Password must contain a minimum of 6 characters with at least one uppercase one lowercase one special character and one number");
+      }
+      // to check weak password
+      if (passwordLength >= 4 && poorPassword && (weakPassword || strongPassword)) {
+        setWeakPassword(true);
+        setButton(true);
+        setPasswordErr("Password is Weak. Password must contain a minimum of 6 characters with at least one uppercase one lowercase one special character and one number");
+      } else {
+        setWeakPassword(false);
+      }
+      // to check strong Password
+      if (passwordLength >= 6 && (poorPassword && weakPassword) && strongPassword) {
+        setStrongPassword(true);
+        setButton(false);
+        setPasswordErr("Password is Strong");
+      } else {
+        setStrongPassword(false);
+      }
+    }
+  }
+
   return (
     <Card className="panelStyle">
       <Form
@@ -54,7 +108,7 @@ export default function RegisterForm() {
         <FormGroup controlId="formFullname" className="formGroup">
           <input
             type="name"
-            placeholder="Full Name"
+            placeholder="First Name"
             id="firstName"
             className="formInput"
             value={firstName}
@@ -64,7 +118,7 @@ export default function RegisterForm() {
         <FormGroup controlId="lastName" className="formGroup">
           <input
             type="lastName"
-            placeholder="lastName"
+            placeholder="Last Name"
             id="lastName"
             className="formInput"
             value={lastName}
@@ -74,7 +128,7 @@ export default function RegisterForm() {
         <FormGroup controlId="formUsername" className="formGroup">
           <input
             type="userName"
-            placeholder="userName"
+            placeholder="Username"
             id="userName"
             className="formInput"
             value={userName}
@@ -100,7 +154,18 @@ export default function RegisterForm() {
             className="formInput"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onInput={passwordStrength}
           />
+        </FormGroup>
+        <FormGroup controlId='formPasswordStrength' className='formGroup'>
+            <ul className="list-group list-group-horizontal">
+
+              {poorPassword === true ? <li className="list-group-item bg-danger col-4" style={{ padding: "1px 0px" }}></li> : ''}
+              {weakPassword === true ? <li className="list-group-item bg-warning col-4" style={{ padding: "1px 0px" }}></li> : ''}
+              {strongPassword === true ? <li className="list-group-item bg-success col-4" style={{ padding: "1px 0px" }}></li> : ''}
+
+            </ul>
+            <p> {passwordError}</p>
         </FormGroup>
         <div className="formGroup">
           <label className="forgotPassword">
@@ -108,7 +173,7 @@ export default function RegisterForm() {
           </label>
         </div>
         <FormGroup className="formGroup" controlId="formSubmit">
-          <Button type="submit" className="btn formButton">
+          <Button type="submit" className="btn formButton" disabled={button}>
             Sign up
           </Button>
         </FormGroup>
