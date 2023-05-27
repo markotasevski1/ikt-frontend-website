@@ -12,6 +12,7 @@ export function LoginForm() {
   const [password, setPassword] = useState('')
   const [errMsg, setErrMsg] = useState('')
   const errRef = useRef(null)
+  const [passwordError, setPasswordErr] = useState("")
   //const userRef = useRef(null)
 
   // useEffect(() => {
@@ -45,13 +46,15 @@ export function LoginForm() {
       }
     } catch (error) {
       console.log('Invalid credentials')
+      setPasswordErr("Invalid email or password");
     }
   }
+
   return (
     <Card className="panelStyle">
-      <p ref={errRef} className={errMsg ? 'error' : 'offscreenError'}>
+      {/* <p ref={errRef} className={errMsg ? 'error' : 'offscreenError'}>
         {errMsg}
-      </p>
+      </p> */}
       <Form
         className="LoginForm"
         controlId="loginForm"
@@ -76,6 +79,9 @@ export function LoginForm() {
             placeholder="Password"
             className="formInput"
           />
+        </FormGroup>
+        <FormGroup controlId='formPasswordStrength' className='formGroup'>
+            <p>{passwordError}</p>
         </FormGroup>
         <div className="formGroup">
           <label className="forgotPassword">

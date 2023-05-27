@@ -1,9 +1,12 @@
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import '../../style/NavigationMenuStyle.scss'
-const logoutFunction = () => {
-  sessionStorage.removeItem('token')
-}
+
 export function NavItems() {
+
+  const logoutFunction = () => {
+    sessionStorage.removeItem('token');
+  }
+
   return (
     <div className="navItems">
       <ul>
@@ -14,9 +17,7 @@ export function NavItems() {
         <CustomLink to="/profile">Profile</CustomLink>
         <CustomLink to="/tutors">Tutors</CustomLink>
         <CustomLink to="/question">Questions</CustomLink>
-        <CustomLink to="/login">
-          <button onClick={logoutFunction}>Log out</button>
-        </CustomLink>
+        <CustomLink onClick={logoutFunction} to="/">Log out</CustomLink>
       </ul>
     </div>
   )
