@@ -1,68 +1,87 @@
-body, html { 
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
-        
-.imgCheckKnowlegde{
-    padding: 4% 0%;
-    margin: 0px;
-    img{
-        width: 100%;
-        height: auto;
-        padding: 0px;
-        margin: 0 auto;
-    }
-}
-.containerCheckKnowledge{
-    border-radius: 84px;
-    background-color: #5DCAD1;
-    text-align: center;
-    height: 500px;
-    margin-top: 4.5%;
-}
-.activateTest{
-    padding: 60px;
-    p{
-        color: white;
-        font-size: 24px;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    button{
-        width: 420px;
-        height: 72px;
-        margin-top: 5%;
-        font-size: 22px;
-        font-family: Arial, Helvetica, sans-serif;
-        border: 0px;
-        border-radius: 36px;
-        background-color: white;
-        color: #32BDC4;
-    }
+body,
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.HomePage{
+.imgCheckKnowlegde {
+  padding: 4% 0%;
+  margin: 0px;
+  img {
     width: 100%;
-    p{
-        font-size: 22px;
-        font-family: Arial, Helvetica, sans-serif;
+    height: auto;
+    padding: 0px;
+    margin: 0 auto;
+  }
+}
+.containerCheckKnowledge {
+  border-radius: 84px;
+  background-color: #5dcad1;
+  text-align: center;
+  height: 500px;
+  margin-top: 4.5%;
+}
+.activateTest {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    @media (max-width: 768px) {
+      /* Media query for screens with maximum width of 768px */
+      font-size: 18px;
     }
-    .header{
-        height: 130px;
-        margin-top: 2%;
-        padding: 40px 13%;
-        background-color: #7DCCAC;
-        color: white;
+
+    @media (max-width: 480px) {
+      /* Media query for screens with maximum width of 480px */
+      font-size: 12px;
     }
-    .containerHomePage{
-        margin-top: 8%;
-        margin-bottom: 10%;
+  }
+  button {
+    width: 70%;
+    height: 72px;
+    margin-top: 5%;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0px;
+    border-radius: 36px;
+    background-color: white;
+    color: black;
+    @media (max-width: 768px) {
+      width: 90%;
+      font-size: 16px;
     }
-    .footer{
-        height: 90px;
-        background-color: #FFB61C;
-        padding: 0px;
-        margin: 0px;
-    }
+    color: #32bdc4;
+  }
+}
+.HomePage {
+  width: 100%;
+  p {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .header {
+    height: 130px;
+    margin-top: 2%;
+    padding: 40px 13%;
+    background-color: #7dccac;
+    color: white;
+  }
+  .containerHomePage {
+    margin-top: 8%;
+    margin-bottom: 10%;
+    font-size: 10px;
+  }
+  .footer {
+    height: 90px;
+    background-color: #ffb61c;
+    padding: 0px;
+    margin: 0px;
+  }
 }

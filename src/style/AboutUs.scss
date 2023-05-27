@@ -1,22 +1,32 @@
+.aboutUsSectionContentWrapperStyling {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+}
 .media {
-    text-align: center;
-    img{
-        max-width: 80%;
-        height: auto;
-        max-height: 800px;
-    }
+  img {
+    max-width: 80%;
+    height: auto;
+    max-height: 800px;
+  }
 }
 
-.content{
+.content {
+  text-align: center;
+  .text {
+    margin-top: 16%;
+  }
+  p {
     text-align: center;
-    .text{
-        margin-top: 16%;
-        
+    color: #1c1c83;
+    font-size: 24px;
+    width: 75%;
+    @media (max-width: 1200px) {
+      width: 100%;
     }
-    p{
-        text-align:center;
-        color: #1C1C83;
-        font-size: 24px;
-        width: 75%;
-    }
+  }
 }

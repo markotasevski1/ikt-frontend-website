@@ -19,6 +19,7 @@ export function NavItems() {
         <CustomLink to="/question">Questions</CustomLink>
         <CustomLink onClick={logoutFunction} to="/">Log out</CustomLink>
       </ul>
+      <img src={require('../../media/homePage/hamburger_menu.png')} />
     </div>
   )
 }
