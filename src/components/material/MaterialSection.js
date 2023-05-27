@@ -1,9 +1,9 @@
 import Material from './Material'
 import axios from '../../api/axios'
 import { useState, useEffect } from 'react'
-const COURSES_URL = '/courses'
+const COURSES_URL = '/courses/courses-by-levels'
 
-export function MaterialSection() {
+export function MaterialSection({levelId}) {
   const [courses, setCourses] = useState([])
   const authTokenSession = sessionStorage.getItem('token')
 
@@ -15,21 +15,33 @@ export function MaterialSection() {
         }
 
         const response = await axios.get(COURSES_URL, { headers })
-        setCourses(response.data)
+        if(levelId != null) {
+          setCourses(response.data[levelId]);
+        } else {
+          const coursesLists =  new Map(Object.entries(response.data)).values();
+          var data = [];
+          var item = coursesLists.next();
+          while(item.value != null) {
+            data = data.concat(item.value);
+            item = coursesLists.next();
+          }
+          console.log(data);
+          setCourses(data);
+        }
         console.log(response.data)
       } catch (error) {
         console.error(error)
       }
     }
 
-    fetchCourses()
+    fetchCourses();
   }, [])
 
   return (
     <div className="materialComponents">
       {courses.map((course) => (
         <Material
-          key={course.id}
+          key={course.courseId}
           name={course.name}
           level={course.level}
           price={course.price}
