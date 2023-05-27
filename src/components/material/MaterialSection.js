@@ -42,6 +42,7 @@ export function MaterialSection({levelId}) {
       {courses.map((course) => (
         <Material
           key={course.courseId}
+          courseId={course.courseId}
           name={course.name}
           level={course.level}
           price={course.price}
