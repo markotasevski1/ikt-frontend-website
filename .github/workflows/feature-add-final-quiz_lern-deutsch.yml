@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - lern-deutsch
 on:
   push:
     branches:
-      - feature/add-final-quiz
+      - main
   workflow_dispatch:
 
 jobs:
