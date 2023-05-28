@@ -6,6 +6,14 @@ export function ScoreCard() {
     const correctAnswers = state.correctlyAnswered.reduce((count, val) => (val ? count + 1 : count), 0);
     const score = (correctAnswers / state.correctlyAnswered.length) * 100;
     const navigate = useNavigate();
+    let level;
+    if (score < 30) {
+        level = 1;
+    } else if (score >= 30 && score < 70) {
+        level = 2;
+    } else {
+        level = 3;
+    }
 
     const getCertificate = () => {
         navigate('/certificate', {state: {courseName: state.courseName, score}});
@@ -20,7 +28,7 @@ export function ScoreCard() {
                     answered {correctAnswers}/{state.correctlyAnswered.length} questions correctly.
                 </div>
             </div>
-            <div>BEST LEVEL FOR YOU IS LEVEL {correctAnswers === 0 ? 1 : correctAnswers}!</div>
+            {state.courseName == null ? <div>BEST LEVEL FOR YOU IS LEVEL {level}!</div> : <div/>}
             {
                 state.courseName == null || score < 50 ?
                     <Button href='/levels'>Go to Levels</Button> :

@@ -42,9 +42,9 @@ export default function Material({
                     <Card.Text className="materialCardElementStyling">
                         Buy course price: {price}$
                     </Card.Text>
-                    <Card.Text className="materialCardElementStyling">
-                        Course tutor tutor id: {tutor}
-                    </Card.Text>
+                    {/*<Card.Text className="materialCardElementStyling">*/}
+                    {/*    Course tutor tutor id: {tutor}*/}
+                    {/*</Card.Text>*/}
                     <Button className="materialCardButtonStyling" onClick={handlePayment}>
                         Buy
                     </Button>

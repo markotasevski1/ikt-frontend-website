@@ -24,7 +24,7 @@ function CheckoutPage() {
             }
 
             const response = await axios.post(PAYMENT_URL, {
-                username: "student-test4",
+                username: "student-test",
                 courseId: state.courseId,
                 creditCard: {
                     name: cardName,
