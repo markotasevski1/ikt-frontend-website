@@ -1,9 +1,15 @@
 import {Button} from 'react-bootstrap';
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 export function ScoreCard() {
     const {state} = useLocation();
     const correctAnswers = state.correctlyAnswered.reduce((count, val) => (val ? count + 1 : count), 0);
+    const score = (correctAnswers / state.correctlyAnswered.length) * 100;
+    const navigate = useNavigate();
+
+    const getCertificate = () => {
+        navigate('/certificate', {state: {courseName: state.courseName, score}});
+    }
 
     return (
         <div className='scoreCard'>
@@ -13,11 +19,13 @@ export function ScoreCard() {
                 <div>You
                     answered {correctAnswers}/{state.correctlyAnswered.length} questions correctly.
                 </div>
-                {/* func za score */}
             </div>
-            <div>BEST LEVEL FOR YOU IS LEVEL {correctAnswers}!</div>
-            {/* func za level */}
-            <Button href='/levels'>Go to Levels</Button>
+            <div>BEST LEVEL FOR YOU IS LEVEL {correctAnswers === 0 ? 1 : correctAnswers}!</div>
+            {
+                state.courseName == null || score < 50 ?
+                    <Button href='/levels'>Go to Levels</Button> :
+                    <Button onClick={getCertificate}>Get Certificate</Button>
+            }
         </div>
     );
 }
