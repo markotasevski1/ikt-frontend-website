@@ -22,7 +22,7 @@ export function LoginForm() {
         console.log(errMsg);
         console.log(errRef);
         setErrMsg('Cannot login')
-    }, [email, password])
+    }, [email, password, errMsg])
 
     const navigate = useNavigate()
     const handleLoginSubmit = async (e) => {

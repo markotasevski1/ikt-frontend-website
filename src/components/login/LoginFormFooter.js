@@ -10,7 +10,7 @@ export function LoginFormFooter()
             </div>
             <div className="formGroup">
                 <div className="shortcutLogin">
-                    <a href=""><img src={require('../../media/login/59439.png')} alt={'login'}/></a>
+                    <a href=""><img src={require('../../media/login/59439.png')} alt={'facebook'}/></a>
                     <a href=""><img src={require('../../media/login/twitter-png-icon-29.png')} alt={'twitter'}/></a>
                     <a href=""><img src={require('../../media/login/free-mail-icon-142-thumb.png')} alt={'mail'}/></a>
                 </div>

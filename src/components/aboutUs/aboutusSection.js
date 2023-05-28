@@ -6,7 +6,7 @@ export default function AboutUsSection(){
         <Container fluid className="aboutUs">
             <Row className="aboutUsSectionContentWrapperStyling">
                 <Col xl={6} lg={6} md={6} className="media">
-                    <img src={require("../../media/aboutUs/—Pngtree—e-learning illustration of lecturer_6579796.png")} alt={'Example picture of a lecturer'}/>
+                    <img src={require("../../media/aboutUs/—Pngtree—e-learning illustration of lecturer_6579796.png")} alt={'Example of a lecturer'}/>
                 </Col>
                 <Col xl={6} lg={6} md={6} className="content">
                     <div className="text">
