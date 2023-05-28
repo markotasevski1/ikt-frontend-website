@@ -20,31 +20,39 @@ export default function Material({
     const viewLessons = () => {
         navigate('/lesson')
     }
+
+    const getCertificate = () => {
+        navigate('/certificate', {state: {courseName: name}});
+    }
+
     return (
         <div className="materialComponent">
-            <h2 style={{color: '#1C1C83'}}>Course {name}</h2>
+            <h2 style={{color: '#1C1C83'}}>{name}</h2>
             <Card className="materialCardStyling">
                 <Card.Body>
                     <Card.Text className="materialCardElementStyling">
-                        Course name:{name}
+                        Course name: {name}
                     </Card.Text>
                     <Card.Text className="materialCardElementStyling">
-                        Course level:{level}
+                        Course level: {level}
                     </Card.Text>
                     <Card.Text className="materialCardElementStyling">
-                        Card length:{length}
+                        Card length: {length}
                     </Card.Text>
                     <Card.Text className="materialCardElementStyling">
-                        Buy course price:{price}
+                        Buy course price: {price}$
                     </Card.Text>
                     <Card.Text className="materialCardElementStyling">
-                        Course tutor tutor id:{tutor}
+                        Course tutor tutor id: {tutor}
                     </Card.Text>
                     <Button className="materialCardButtonStyling" onClick={handlePayment}>
                         Buy
                     </Button>
                     <Button className="materialCardButtonStyling" onClick={viewLessons}>
                         View Lessons
+                    </Button>
+                    <Button className="materialCardButtonStyling" onClick={getCertificate}>
+                        Get certificate!
                     </Button>
                 </Card.Body>
             </Card>
