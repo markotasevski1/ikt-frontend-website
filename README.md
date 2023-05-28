@@ -4,8 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-This project is for faculty project.
-After you clone it run.
+This project is made for faculty to be precise it's for ICT projects.
+If you want to learn deutsch clone the repo and write the following commands
 
 ### `npm ci` 
  npm ci is a command that installs the dependencies listed in the package-lock.json
