@@ -16,7 +16,7 @@ function CheckKnowledge() {
           <Col className="imgCheckKnowlegde">
             <img
               src={require('../../media/homePage/AboutUsPageArt_Artboard-1.png')}
-              alt="Image"
+              alt={'Artboard'}
             />
           </Col>
           <Col lg={5} className="containerCheckKnowledge">
@@ -40,7 +40,7 @@ function CheckKnowledge() {
           <Col className="imgCheckKnowlegde">
             <img
               src={require('../../media/homePage/AboutUsPageArt_Artboard-1.png')}
-              alt="Image"
+              alt={'Artboard 2'}
             />
           </Col>
         </Row>

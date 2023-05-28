@@ -7,24 +7,24 @@ export function GetCourses() {
   const [courses, setCourses] = useState([])
   const authTokenSession = sessionStorage.getItem('token')
 
-  
+
   useEffect(() => {
     const fetchCourses = async () => {
       try {
         const headers = {
           Authorization: `Bearer ${authTokenSession}`,
         }
-  
+
         const response = await axios.get(COURSES_URL, { headers })
         setCourses(response.data)
-   
+
       } catch (error) {
         console.error(error)
       }
     }
-  
+
     fetchCourses()
-  }, []) // Empty dependency array ensures the effect runs only once
+  }, [authTokenSession]) // Empty dependency array ensures the effect runs only once
 
   return (
     <div>

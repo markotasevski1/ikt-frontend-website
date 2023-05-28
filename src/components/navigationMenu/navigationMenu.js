@@ -6,7 +6,7 @@ function NavigationMenu(className) {
     return (
         <div className="navigationMenu">
             <div className="logoNavMenu">
-                <img src={require("../../media/navigationMenu/LernDeutsch (2).png")}/>
+                <img src={require("../../media/navigationMenu/LernDeutsch (2).png")} alt={'logo'}/>
             </div>
             <NavItems/>
         </div>

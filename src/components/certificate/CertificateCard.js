@@ -19,7 +19,7 @@ export function CertificateCard() {
             <Container className="certificateCard" ref={certificate}>
                 <Row>
                     <Col md={3} lg={3} className="sideSection">
-                        <img src={require("../../media/navigationMenu/LernDeutsch (2).png")}/>
+                        <img src={require("../../media/navigationMenu/LernDeutsch (2).png")} alt={'logo'}/>
                     </Col>
                     <Col className="cardContent">
                         <h2>CERTIFICATE OF COMPLETION</h2>

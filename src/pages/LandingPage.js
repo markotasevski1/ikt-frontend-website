@@ -10,7 +10,7 @@ function LandingPage() {
         if (authTokenSession != null) {
             navigate("/home");
         }
-    }, [authTokenSession]);
+    }, [authTokenSession, navigate]);
 
     return (
         <div>
@@ -19,7 +19,7 @@ function LandingPage() {
                     <Col xl={5} lg={5} md={5} className="leftLogin">
                         <div className="centerLeftLogin">
                             <div className="logoLogin">
-                                <img src={require('../media/login/LernDeutsch (2).png')}/>
+                                <img src={require('../media/login/LernDeutsch (2).png')} alt={'logo'}/>
                             </div>
                             <div className="leftText">
                                 <p>Easy, Fun and Effective Learn German Online</p>
@@ -35,7 +35,7 @@ function LandingPage() {
                     </Col>
                     <Col xl={7} lg={7} md={7} className="rightLogin">
                         <img
-                            src={require('../media/login/—Pngtree—boy character computer learning illustration_6406919.png')}/>
+                            src={require('../media/login/—Pngtree—boy character computer learning illustration_6406919.png')} alt={'Example computer learner or something idfk'}/>
                     </Col>
                 </Row>
             </Container>

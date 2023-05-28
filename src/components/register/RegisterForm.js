@@ -100,7 +100,7 @@ export default function RegisterForm() {
   return (
     <Card className="panelStyle">
       <Form
-        
+
         className="RegisterForm"
         id="RegisterForm"
         onSubmit={handleSubmit}
@@ -169,7 +169,7 @@ export default function RegisterForm() {
         </FormGroup>
         <div className="formGroup">
           <label className="forgotPassword">
-            <a href="">Forgot password?</a>
+            <a href="/forgot-password">Forgot password?</a>
           </label>
         </div>
         <FormGroup className="formGroup" controlId="formSubmit">

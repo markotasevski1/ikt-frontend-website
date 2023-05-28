@@ -35,7 +35,7 @@ export function MaterialSection({levelId}) {
     }
 
     fetchCourses();
-  }, [])
+  }, [authTokenSession, levelId])
 
   return (
     <div className="materialComponents">

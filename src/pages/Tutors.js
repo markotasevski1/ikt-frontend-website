@@ -20,7 +20,7 @@ export default function TutorsPage() {
       }
     }
     getTutors()
-  }, [])
+  }, [authTokenSession])
   // for testing tutor id 5eb0cc82-ac92-445f-8a5c-08db57fb7184
   // user id 8052b986-c34b-4b98-bea8-87e532bd79cf
   return (
