@@ -21,8 +21,8 @@ export default function Material({
         navigate('/lesson')
     }
 
-    const getCertificate = () => {
-        navigate('/certificate', {state: {courseName: name}});
+    const viewFinalExam = () => {
+        navigate('/question', {state: {courseId, courseName: name}});
     }
 
     return (
@@ -51,8 +51,8 @@ export default function Material({
                     <Button className="materialCardButtonStyling" onClick={viewLessons}>
                         View Lessons
                     </Button>
-                    <Button className="materialCardButtonStyling" onClick={getCertificate}>
-                        Get certificate!
+                    <Button className="materialCardButtonStyling" onClick={viewFinalExam}>
+                        Take final exam!
                     </Button>
                 </Card.Body>
             </Card>

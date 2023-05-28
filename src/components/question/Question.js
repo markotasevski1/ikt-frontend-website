@@ -4,15 +4,19 @@ import {useEffect, useState} from "react";
 import axios from "../../api/axios";
 
 const LEVEL_DETERMINATION_URL = 'quizes/level-determination';
-// const LEVEL_DETERMINATION_URL = 'quizes/level-determination';
 
 export default function Question() {
+    let url = LEVEL_DETERMINATION_URL;
     const {state} = useLocation();
     const [quiz, setQuiz] = useState([]);
     const authTokenSession = sessionStorage.getItem('token');
-    let lessonId = null;
+
     if (state != null) {
-        lessonId = state.lessonId;
+        if (state.lessonId != null) {
+            url = ''
+        } else if (state.courseId != null) {
+            url = 'courses/' + state.courseId + '/final-quiz';
+        }
     }
 
     useEffect(() => {
@@ -22,7 +26,7 @@ export default function Question() {
                     Authorization: `Bearer ${authTokenSession}`,
                 }
 
-                const response = await axios.get(LEVEL_DETERMINATION_URL, {headers});
+                const response = await axios.get(url, {headers});
                 setQuiz(response.data);
             } catch (error) {
                 console.error(error);
@@ -30,7 +34,7 @@ export default function Question() {
         }
 
         fetchQuiz();
-    }, [quiz, setQuiz]);
+    }, [url, authTokenSession]);
 
     if (quiz.length === 0) {
         return <h1>Loading...</h1>;
@@ -38,7 +42,7 @@ export default function Question() {
 
     return (
         <div style={{background: "#79CCD2", height: "100vh"}}>
-            <QuestionCard questions={quiz.questions}/>
+            <QuestionCard questions={quiz.questions} courseName={state?.courseName}/>
         </div>
     );
 }

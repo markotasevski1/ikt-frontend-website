@@ -3,7 +3,7 @@ import "../../style/Question.scss"
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom'
 
-export function QuestionCard({questions}) {
+export function QuestionCard({questions, courseName}) {
     const [num] = useState(questions.length);
     const [active, setActive] = useState(1);
     const [width, setWidth] = useState(0);
@@ -24,7 +24,7 @@ export function QuestionCard({questions}) {
         setSelectedAnswer(null);
 
         if (active >= num) {
-            navigate('/score', {state: {correctlyAnswered: [...correctlyAnswered, answrs.includes(selectedAnswer)]}});
+            navigate('/score', {state: {correctlyAnswered: [...correctlyAnswered, answrs.includes(selectedAnswer)], courseName}});
         }
 
         setCurrent(questions[active]);

@@ -19,8 +19,8 @@ export function MaterialSection({levelId}) {
           setCourses(response.data[levelId]);
         } else {
           const coursesLists =  new Map(Object.entries(response.data)).values();
-          var data = [];
-          var item = coursesLists.next();
+          let data = [];
+          let item = coursesLists.next();
           while(item.value != null) {
             data = data.concat(item.value);
             item = coursesLists.next();
@@ -42,6 +42,7 @@ export function MaterialSection({levelId}) {
       {courses.map((course) => (
         <Material
           key={course.courseId}
+          // finalLessonId={course.finalQuizId}
           courseId={course.courseId}
           name={course.name}
           level={course.level}
