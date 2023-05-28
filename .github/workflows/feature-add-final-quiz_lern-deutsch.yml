@@ -51,5 +51,5 @@ jobs:
         with:
           app-name: 'lern-deutsch'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_56A85865B76B421E91773F0157EF964A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: .
