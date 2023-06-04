@@ -18,5 +18,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-This project is using React 18.2.0 version, Javascript and SCSS\
+This project is using React 18.2.0 version, Javascript and SCSS
 
